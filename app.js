@@ -2,7 +2,28 @@
 // BUDGET CONTROLLER
 var budgetController = (function() {
 
-    //some code
+    var Expense = function(id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    }
+
+    var Income = function(id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    }
+
+    var data = {
+        allItems: {
+            exp: [], // all expenses
+            inc: [] //all incomes
+        },
+        totals: {
+            exp: 0, // total expenses
+            inc: 0  // total incomes
+        }
+    }
 
 })();
 
@@ -22,7 +43,7 @@ var UIController = (function(){
         getInput: function(){
             return {
                 type: document.querySelector(DOMStrings.inputType).value, // will be either inc or exp
-                decrription: document.querySelector(DOMStrings.inputDescription).value,
+                description: document.querySelector(DOMStrings.inputDescription).value,
                 value: document.querySelector(DOMStrings.inputValue).value,
             }
 
